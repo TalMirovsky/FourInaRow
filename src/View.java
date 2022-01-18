@@ -17,16 +17,14 @@ public class View {
 	int result;
 	private JLabel[][] chips;
 	private JLabel lblColor;
-	private final int cols = 9; 
-	private final int rows = 6;
 	
 	// Create the application
-	public View() {
-		initialize();
+	public View(int cols, int rows) {
+		initialize(cols, rows);
 	}
 
 	// Initialize the contents of the frame
-	private void initialize() {
+	private void initialize(int cols, int rows) {
 		frame = new JFrame("Four In a Row Game");
 		frame.setBounds(100, 100, 629, 568);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -5,7 +5,7 @@ public class Game {
 	private static char[][] board = null;
 	private static int rows;
 	private static int columns;
-	static char player= 'A';
+	static char player = 'A';
 
 	public Game(int rows, int columns) {
 		super();
