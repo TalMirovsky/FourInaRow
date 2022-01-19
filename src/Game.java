@@ -6,6 +6,7 @@ public class Game {
 	private static int rows;
 	private static int columns;
 	static char player = 'A';
+	private final int WIN_CONDITION = 4; 
 
 	public Game(int rows, int columns) {
 		super();
@@ -50,40 +51,40 @@ public class Game {
 			for(int col = 0; col < columns; col++) {
 				if(board[row][col] == '0') // Cell is empty
 					continue;
-				if(col + 3 < columns) {  // Check horizontal 
+				if(col + WIN_CONDITION - 1 < columns) {  // Check horizontal 
 					temp = board[row][col];
-					for(move = 1; move < 4; move++) {
+					for(move = 1; move < WIN_CONDITION; move++) {
 						if(board[row][col + move] != temp)
 							break;
 					}
-					if(move == 4)
+					if(move == WIN_CONDITION)
 						return temp;
 				}
-				if(row - 3 >= 0) {     // Check vertical
+				if(row - (WIN_CONDITION - 1) >= 0) {     // Check vertical
 					temp = board[row][col];
-					for(move = 1; move < 4; move++) {
+					for(move = 1; move < WIN_CONDITION; move++) {
 						if(board[row - move][col] != temp)
 							break;
 					}
-					if(move == 4)
+					if(move == WIN_CONDITION)
 						return temp;
 				}
-				if(row - 3 >= 0 && col + 3 < columns) {  // Check right diagonal
+				if(row - (WIN_CONDITION - 1) >= 0 && col + WIN_CONDITION - 1 < columns) {  // Check right diagonal
 					temp= board[row][col];
-					for(move = 1; move < 4; move++) {
+					for(move = 1; move < WIN_CONDITION; move++) {
 						if(board[row - move][col + move] != temp)
 							break;
 					}
-					if(move == 4)
+					if(move == WIN_CONDITION)
 						return temp;
 				}
-				if(row - 3 >= 0 && col - 3 >= 0) {    // Check left diagonal
+				if(row - (WIN_CONDITION - 1) >= 0 && col - (WIN_CONDITION - 1) >= 0) {    // Check left diagonal
 					temp= board[row][col];
-					for(move = 1; move < 4; move++) {
+					for(move = 1; move < WIN_CONDITION; move++) {
 						if(board[row - move][col - move] != temp)
 							break;
 					}
-					if(move == 4)
+					if(move == WIN_CONDITION)
 						return temp;
 				}
 			}

@@ -1,21 +1,20 @@
 import java.awt.EventQueue;
-import java.util.Scanner;
 
 public class Main {
 	
 	static char winner;
-	private final static int rows = 6;
-	private final static int cols = 9;
+	private static final int ROWS = 6;
+	private static final int COLS = 9;
 
 	public static void main(String[] args) {
 		
-		Game game = new Game(rows, cols);
+		Game game = new Game(ROWS, COLS);
 		
 		// Launch the application
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					View window = new View(cols, rows);
+					View window = new View(COLS, ROWS);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
